@@ -4,3 +4,4 @@
 ![nodejs](https://github.com/era230/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg)
 [![asciicast](https://asciinema.org/a/CDLYxBDO8mI1q2Y88rHSSYAlr.svg)](https://asciinema.org/a/CDLYxBDO8mI1q2Y88rHSSYAlr)
 [![asciicast](https://asciinema.org/a/YTfzAzEHyK5amSaRYm5weXXe9.svg)](https://asciinema.org/a/YTfzAzEHyK5amSaRYm5weXXe9)
+[![asciicast](https://asciinema.org/a/ZKlQfP5Hs2xAJSxlCbTsdBPQe.svg)](https://asciinema.org/a/ZKlQfP5Hs2xAJSxlCbTsdBPQe)
