@@ -15,7 +15,8 @@ const bodyOfTheGame = (ruleOfTheGame, resultArr) => {
     console.log(`Question: ${car(QuestionAnswer)}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== cdr(QuestionAnswer)) {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${cdr(QuestionAnswer)}.\nLet's try again, ${userName}!`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${cdr(QuestionAnswer)}.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
     if (userAnswer === cdr(QuestionAnswer)) {
