@@ -3,6 +3,19 @@
 <a href="https://codeclimate.com/github/era230/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/62f57936deec420bb33a/maintainability" /></a>
 ![nodejs](https://github.com/era230/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg)
 
+Brain Games is a set of five simple math games:
+
+Checking a number for parity
+
+Calculator
+
+Greatest Common Divisor
+
+Arithmetic progression
+
+Checking if a number is prime
+
+The launch and gameplay of each game is shown below.
 1. Checking a number for parity
 [![asciicast](https://asciinema.org/a/CDLYxBDO8mI1q2Y88rHSSYAlr.svg)](https://asciinema.org/a/CDLYxBDO8mI1q2Y88rHSSYAlr)
 2. Calculator
