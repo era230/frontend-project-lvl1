@@ -16,7 +16,7 @@ Arithmetic progression
 Checking if a number is prime
 
 The launch and gameplay of each game is shown below.
-1. Checking a number for evenness
+1. Checking a number for parity
 [![asciicast](https://asciinema.org/a/CDLYxBDO8mI1q2Y88rHSSYAlr.svg)](https://asciinema.org/a/CDLYxBDO8mI1q2Y88rHSSYAlr)
 2. Calculator
 [![asciicast](https://asciinema.org/a/YTfzAzEHyK5amSaRYm5weXXe9.svg)](https://asciinema.org/a/YTfzAzEHyK5amSaRYm5weXXe9)
