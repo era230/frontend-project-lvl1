@@ -5,7 +5,7 @@ import {
 
 const bodyOfTheGame = (ruleOfTheGame, resultArr) => {
   console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have you name? ');
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(ruleOfTheGame);
   for (let i = 1, j = 0; i <= 3; i += 1) {
