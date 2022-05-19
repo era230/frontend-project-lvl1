@@ -1,7 +1,7 @@
 import runEngine from '../index.js';
 
-const makeArr = () => {
-  const resultArr = [];
+const getGameValues = () => {
+  const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
     let sequence = Math.floor(Math.random() * 50);
     const arr = [sequence];
@@ -14,16 +14,16 @@ const makeArr = () => {
     const answerI = Math.floor(Math.random() * (randomLength - 1));
     const answer = String(arr[answerI]);
     arr[answerI] = '..';
-    resultArr.push(arr.join(' '));
-    resultArr.push(answer);
+    gameValues.push(arr.join(' '));
+    gameValues.push(answer);
   }
-  return resultArr;
+  return gameValues;
 };
 
 const ruleOfTheGame = 'What number is missing in the progression?';
 
 const startProgressionGame = () => {
-  runEngine(ruleOfTheGame, makeArr());
+  runEngine(ruleOfTheGame, getGameValues());
 };
 
 export default startProgressionGame;

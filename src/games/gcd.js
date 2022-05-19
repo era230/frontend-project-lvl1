@@ -12,23 +12,23 @@ const getGcd = (a, b) => {
   return num2;
 };
 
-const makeArr = () => {
-  const resultArr = [];
+const getGameValues = () => {
+  const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
     const randomNumber1 = Math.floor(Math.random() * 100);
     const randomNumber2 = Math.floor(Math.random() * 100);
     const expression = String(`${randomNumber1} ${randomNumber2}`);
-    resultArr.push(expression);
+    gameValues.push(expression);
     const correctAnswer = String(getGcd(randomNumber1, randomNumber2));
-    resultArr.push(correctAnswer);
+    gameValues.push(correctAnswer);
   }
-  return resultArr;
+  return gameValues;
 };
 
 const ruleOfTheGame = 'Find the greatest common divisor of given numbers.';
 
 const startGcdGames = () => {
-  runEngine(ruleOfTheGame, makeArr());
+  runEngine(ruleOfTheGame, getGameValues());
 };
 
 export default startGcdGames;

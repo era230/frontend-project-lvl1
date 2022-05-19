@@ -1,6 +1,6 @@
 import runEngine from '../index.js';
 
-const prime = (num) => {
+const checkPrime = (num) => {
   for (let i = 2; i * i < num; i += 1) {
     if (num % i === 0) {
       return 'no';
@@ -9,21 +9,21 @@ const prime = (num) => {
   return 'yes';
 };
 
-const makeArr = () => {
-  const resultArr = [];
+const getGameValues = () => {
+  const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
     const randomNumber = Math.floor(Math.random() * 200);
-    resultArr.push(randomNumber);
-    const correct = prime(randomNumber);
-    resultArr.push(correct);
+    gameValues.push(randomNumber);
+    const correct = checkPrime(randomNumber);
+    gameValues.push(correct);
   }
-  return resultArr;
+  return gameValues;
 };
 
 const ruleOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const startPrimeGame = () => {
-  runEngine(ruleOfTheGame, makeArr());
+  runEngine(ruleOfTheGame, getGameValues());
 };
 
 export default startPrimeGame;

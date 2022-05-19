@@ -1,7 +1,7 @@
 import runEngine from '../index.js';
 
-const makeArr = () => {
-  const resultArr = [];
+const getGameValues = () => {
+  const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
     const randomNumber1 = Math.floor(Math.random() * 10);
     const randomNumber2 = Math.floor(Math.random() * 10);
@@ -21,16 +21,16 @@ const makeArr = () => {
       expression = `${randomNumber1} * ${randomNumber2}`;
       correctAnswer = String(randomNumber1 * randomNumber2);
     }
-    resultArr.push(expression);
-    resultArr.push(correctAnswer);
+    gameValues.push(expression);
+    gameValues.push(correctAnswer);
   }
-  return resultArr;
+  return gameValues;
 };
 
 const ruleOfTheGame = 'What is the result of the expression?';
 
 const startCalculatorGame = () => {
-  runEngine(ruleOfTheGame, makeArr());
+  runEngine(ruleOfTheGame, getGameValues());
 };
 
 export default startCalculatorGame;
