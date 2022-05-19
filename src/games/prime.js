@@ -1,8 +1,11 @@
 import runEngine from '../index.js';
 import getRandomNumber from '../helpers.js';
 
-const checkPrime = (num) => {
-  for (let i = 2; i * i < num; i += 1) {
+const isPrime = (num) => {
+  if (num < 2) {
+    return 'no';
+  }
+  for (let i = 2; i <= num / 2; i += 1) {
     if (num % i === 0) {
       return 'no';
     }
@@ -14,7 +17,7 @@ const getGameValues = () => {
   const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
     const randomNumber = getRandomNumber(0, 200, 0);
-    const correctAnswer = checkPrime(randomNumber);
+    const correctAnswer = isPrime(randomNumber);
     gameValues.push(randomNumber);
     gameValues.push(correctAnswer);
   }
