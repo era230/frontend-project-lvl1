@@ -1,4 +1,4 @@
-import bodyOfTheGame from '../src/index.js';
+import bodyOfTheGame from '../index.js';
 
 const getGcd = (a, b) => {
   let num1 = Math.max(a, b);

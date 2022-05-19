@@ -1,4 +1,4 @@
-import bodyOfTheGame from '../src/index.js';
+import bodyOfTheGame from '../index.js';
 
 const makeArr = () => {
   const resultArr = [];

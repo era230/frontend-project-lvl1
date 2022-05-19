@@ -1,4 +1,4 @@
-import bodyOfTheGame from '../src/index.js';
+import bodyOfTheGame from '../index.js';
 
 const prime = (num) => {
   for (let i = 2; i * i < num; i += 1) {
