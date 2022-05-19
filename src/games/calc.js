@@ -1,12 +1,13 @@
 import runEngine from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const getGameValues = () => {
   const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
-    const randomNumber1 = Math.floor(Math.random() * 10);
-    const randomNumber2 = Math.floor(Math.random() * 10);
-    const arr = ['+', '-', '*'];
-    const randomOperation = arr[Math.floor(Math.random(arr) * 3)];
+    const randomNumber1 = getRandomNumber(0, 20);
+    const randomNumber2 = getRandomNumber(0, 20);
+    const operations = ['+', '-', '*'];
+    const randomOperation = operations[Math.floor(Math.random(operations) * 3)];
     let expression;
     let correctAnswer;
     if (randomOperation === '+') {

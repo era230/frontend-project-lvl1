@@ -1,4 +1,5 @@
 import runEngine from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const getGcd = (a, b) => {
   let num1 = Math.max(a, b);
@@ -15,8 +16,8 @@ const getGcd = (a, b) => {
 const getGameValues = () => {
   const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
-    const randomNumber1 = Math.floor(Math.random() * 100);
-    const randomNumber2 = Math.floor(Math.random() * 100);
+    const randomNumber1 = getRandomNumber(0, 100);
+    const randomNumber2 = getRandomNumber(0, 100);
     const expression = String(`${randomNumber1} ${randomNumber2}`);
     gameValues.push(expression);
     const correctAnswer = String(getGcd(randomNumber1, randomNumber2));

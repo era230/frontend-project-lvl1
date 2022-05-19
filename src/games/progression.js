@@ -1,20 +1,21 @@
 import runEngine from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const getGameValues = () => {
   const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
-    let sequence = Math.floor(Math.random() * 50);
-    const arr = [sequence];
-    const randomLength = Math.floor((Math.random() * (10 - 5) + 5));
-    const dif = Math.floor((Math.random() + 0.1) * 12);
+    let sequence = getRandomNumber(0, 50);
+    const progressionNumbers = [sequence];
+    const randomLength = getRandomNumber(0, ((10 - 5) + 5));
+    const dif = getRandomNumber(0.1, 12);
     for (let j = 1; j <= randomLength; j += 1) {
       sequence += dif;
-      arr.push(sequence);
+      progressionNumbers.push(sequence);
     }
     const answerI = Math.floor(Math.random() * (randomLength - 1));
-    const answer = String(arr[answerI]);
-    arr[answerI] = '..';
-    gameValues.push(arr.join(' '));
+    const answer = String(progressionNumbers[answerI]);
+    progressionNumbers[answerI] = '..';
+    gameValues.push(progressionNumbers.join(' '));
     gameValues.push(answer);
   }
   return gameValues;

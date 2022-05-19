@@ -1,4 +1,5 @@
 import runEngine from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const checkPrime = (num) => {
   for (let i = 2; i * i < num; i += 1) {
@@ -12,7 +13,7 @@ const checkPrime = (num) => {
 const getGameValues = () => {
   const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
-    const randomNumber = Math.floor(Math.random() * 200);
+    const randomNumber = getRandomNumber(0, 200);
     gameValues.push(randomNumber);
     const correct = checkPrime(randomNumber);
     gameValues.push(correct);
