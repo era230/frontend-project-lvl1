@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import checkPrime from '../games/prime.js';
+import checkPrime from '../src/games/prime.js';
 
 checkPrime();
