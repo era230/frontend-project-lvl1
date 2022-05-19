@@ -4,10 +4,10 @@ import getRandomNumber from '../helpers.js';
 const getGameValues = () => {
   const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
-    let sequence = getRandomNumber(0, 50);
+    let sequence = getRandomNumber(0, 50, 0);
     const progressionNumbers = [sequence];
-    const randomLength = getRandomNumber(0, ((10 - 5) + 5));
-    const dif = getRandomNumber(0.1, 12);
+    const randomLength = getRandomNumber(0, (10 - 5), 5);
+    const dif = getRandomNumber(0.1, 12, 0);
     for (let j = 1; j <= randomLength; j += 1) {
       sequence += dif;
       progressionNumbers.push(sequence);

@@ -4,8 +4,8 @@ import getRandomNumber from '../helpers.js';
 const getGameValues = () => {
   const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
-    const randomNumber1 = getRandomNumber(0, 20);
-    const randomNumber2 = getRandomNumber(0, 20);
+    const randomNumber1 = getRandomNumber(0, 20, 0);
+    const randomNumber2 = getRandomNumber(0, 20, 0);
     const operations = ['+', '-', '*'];
     const randomOperation = operations[Math.floor(Math.random(operations) * 3)];
     let expression;

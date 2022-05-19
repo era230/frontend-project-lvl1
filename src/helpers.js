@@ -1,5 +1,5 @@
-const getRandomNumber = (num1, num2) => {
-  const randomNumber = Math.floor((Math.random() + num1) * num2);
+const getRandomNumber = (num1, num2, num3) => {
+  const randomNumber = Math.floor((Math.random() + num1) * num2 + num3);
   return randomNumber;
 };
 
