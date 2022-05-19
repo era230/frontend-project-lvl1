@@ -1,4 +1,4 @@
-import bodyOfTheGame from '../index.js';
+import runEngine from '../index.js';
 
 const makeArr = () => {
   const resultArr = [];
@@ -29,8 +29,8 @@ const makeArr = () => {
 
 const ruleOfTheGame = 'What is the result of the expression?';
 
-const calc = () => {
-  bodyOfTheGame(ruleOfTheGame, makeArr());
+const startCalculatorGame = () => {
+  runEngine(ruleOfTheGame, makeArr());
 };
 
-export default calc;
+export default startCalculatorGame;

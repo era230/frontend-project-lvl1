@@ -1,4 +1,4 @@
-import bodyOfTheGame from '../index.js';
+import runEngine from '../index.js';
 
 const prime = (num) => {
   for (let i = 2; i * i < num; i += 1) {
@@ -22,8 +22,8 @@ const makeArr = () => {
 
 const ruleOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const checkPrime = () => {
-  bodyOfTheGame(ruleOfTheGame, makeArr());
+const startPrimeGame = () => {
+  runEngine(ruleOfTheGame, makeArr());
 };
 
-export default checkPrime;
+export default startPrimeGame;

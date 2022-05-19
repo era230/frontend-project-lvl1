@@ -1,4 +1,4 @@
-import bodyOfTheGame from '../index.js';
+import runEngine from '../index.js';
 
 const makeArr = () => {
   const resultArr = [];
@@ -13,8 +13,8 @@ const makeArr = () => {
 
 const ruleOfTheGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const checkParity = () => {
-  bodyOfTheGame(ruleOfTheGame, makeArr());
+const startEvenGame = () => {
+  runEngine(ruleOfTheGame, makeArr());
 };
 
-export default checkParity;
+export default startEvenGame;

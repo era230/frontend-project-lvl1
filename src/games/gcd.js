@@ -1,4 +1,4 @@
-import bodyOfTheGame from '../index.js';
+import runEngine from '../index.js';
 
 const getGcd = (a, b) => {
   let num1 = Math.max(a, b);
@@ -27,8 +27,8 @@ const makeArr = () => {
 
 const ruleOfTheGame = 'Find the greatest common divisor of given numbers.';
 
-const checkGcd = () => {
-  bodyOfTheGame(ruleOfTheGame, makeArr());
+const startGcdGames = () => {
+  runEngine(ruleOfTheGame, makeArr());
 };
 
-export default checkGcd;
+export default startGcdGames;

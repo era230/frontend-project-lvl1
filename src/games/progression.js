@@ -1,4 +1,4 @@
-import bodyOfTheGame from '../index.js';
+import runEngine from '../index.js';
 
 const makeArr = () => {
   const resultArr = [];
@@ -22,8 +22,8 @@ const makeArr = () => {
 
 const ruleOfTheGame = 'What number is missing in the progression?';
 
-const progression = () => {
-  bodyOfTheGame(ruleOfTheGame, makeArr());
+const startProgressionGame = () => {
+  runEngine(ruleOfTheGame, makeArr());
 };
 
-export default progression;
+export default startProgressionGame;
