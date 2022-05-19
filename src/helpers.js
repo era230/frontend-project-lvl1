@@ -1,5 +1,5 @@
-const getRandomNumber = (num1, num2, num3, coll) => {
-  const randomNumber = Math.floor((Math.random(coll) + num1) * num2 + num3);
+const getRandomNumber = (min, max, coll) => {
+  const randomNumber = Math.floor(Math.random(coll) * (max - min)) + min;
   return randomNumber;
 };
 

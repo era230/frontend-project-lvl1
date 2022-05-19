@@ -16,7 +16,7 @@ const isPrime = (num) => {
 const getGameValues = () => {
   const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
-    const randomNumber = getRandomNumber(0, 200, 0);
+    const randomNumber = getRandomNumber(0, 201);
     const correctAnswer = isPrime(randomNumber);
     gameValues.push(randomNumber);
     gameValues.push(correctAnswer);

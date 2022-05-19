@@ -16,8 +16,8 @@ const getGcd = (a, b) => {
 const getGameValues = () => {
   const gameValues = [];
   for (let i = 1; i <= 3; i += 1) {
-    const randomNumber1 = getRandomNumber(0.1, 100, 0);
-    const randomNumber2 = getRandomNumber(0.1, 100, 0);
+    const randomNumber1 = getRandomNumber(1, 101);
+    const randomNumber2 = getRandomNumber(1, 101);
     const expression = `${randomNumber1} ${randomNumber2}`;
     gameValues.push(expression);
     const correctAnswer = String(getGcd(randomNumber1, randomNumber2));
