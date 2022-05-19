@@ -21,7 +21,7 @@ const getGameValues = () => {
     const randomNumber1 = getRandomNumber(0, 51);
     const randomNumber2 = getRandomNumber(0, 51);
     const operators = ['+', '-', '*'];
-    const randomOperator = operators[getRandomNumber(0, 3, operators)];
+    const randomOperator = operators[getRandomNumber(0, 3)];
     const expression = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
     const correctAnswer = getCorrectAnswer(randomOperator, randomNumber1, randomNumber2);
     gameValues.push(expression);
