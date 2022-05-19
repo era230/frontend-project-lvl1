@@ -12,7 +12,7 @@ const getGameValues = () => {
       sequence += dif;
       progressionNumbers.push(sequence);
     }
-    const answerI = Math.floor(Math.random() * (randomLength - 1));
+    const answerI = getRandomNumber(0, randomLength - 1, 0);
     const answer = String(progressionNumbers[answerI]);
     progressionNumbers[answerI] = '..';
     gameValues.push(progressionNumbers.join(' '));
