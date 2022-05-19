@@ -13,10 +13,10 @@ const getGameValues = () => {
       progressionNumbers.push(sequence);
     }
     const answerI = getRandomNumber(0, randomLength - 1, 0);
-    const answer = String(progressionNumbers[answerI]);
+    const correctAnswer = String(progressionNumbers[answerI]);
     progressionNumbers[answerI] = '..';
     gameValues.push(progressionNumbers.join(' '));
-    gameValues.push(answer);
+    gameValues.push(correctAnswer);
   }
   return gameValues;
 };

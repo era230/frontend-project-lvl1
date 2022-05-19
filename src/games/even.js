@@ -6,8 +6,8 @@ const getGameValues = () => {
   for (let i = 1; i <= 3; i += 1) {
     const randomNumber = getRandomNumber(0, 100, 0);
     gameValues.push(randomNumber);
-    const correct = randomNumber % 2 === 0 ? 'yes' : 'no';
-    gameValues.push(correct);
+    const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+    gameValues.push(correctAnswer);
   }
   return gameValues;
 };
