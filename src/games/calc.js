@@ -1,15 +1,15 @@
 import runEngine from '../index.js';
 import getRandomNumber from '../helpers.js';
 
-const getCorrectAnswer = (operation, num1, num2) => {
+const getCorrectAnswer = (operator, num1, num2) => {
   let correctAnswer;
-  if (operation === '+') {
+  if (operator === '+') {
     correctAnswer = String(num1 + num2);
   }
-  if (operation === '-') {
+  if (operator === '-') {
     correctAnswer = String(num1 - num2);
   }
-  if (operation === '*') {
+  if (operator === '*') {
     correctAnswer = String(num1 * num2);
   }
   return correctAnswer;
@@ -20,10 +20,10 @@ const getGameValues = () => {
   for (let i = 1; i <= 3; i += 1) {
     const randomNumber1 = getRandomNumber(0, 20, 0);
     const randomNumber2 = getRandomNumber(0, 20, 0);
-    const operations = ['+', '-', '*'];
-    const randomOperation = operations[getRandomNumber(0, 3, 0, operations)];
-    const expression = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
-    const correctAnswer = getCorrectAnswer(randomOperation, randomNumber1, randomNumber2);
+    const operators = ['+', '-', '*'];
+    const randomOperator = operators[getRandomNumber(0, 3, 0, operators)];
+    const expression = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
+    const correctAnswer = getCorrectAnswer(randomOperator, randomNumber1, randomNumber2);
     gameValues.push(expression);
     gameValues.push(correctAnswer);
   }
