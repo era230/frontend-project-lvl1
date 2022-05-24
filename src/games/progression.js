@@ -19,7 +19,7 @@ const getRounds = () => {
     const randomLength = getRandomNumber(5, 10);
     const dif = getRandomNumber(1, 12);
     const progressionNumbers = getProgression(randomLength, startOfSequence, dif);
-    const answerI = getRandomNumber(0, randomLength);
+    const answerI = getRandomNumber(0, randomLength - 1);
     const correctAnswer = String(progressionNumbers[answerI]);
     progressionNumbers[answerI] = '..';
     rounds[j].push(progressionNumbers.join(' '));
