@@ -1,5 +1,5 @@
 import runEngine from '../index.js';
-import getRandomNumber from '../helpers.js';
+import { getRandomNumber, numberOfRounds } from '../helpers.js';
 
 const getGcd = (a, b) => {
   let num1 = Math.max(a, b);
@@ -15,7 +15,6 @@ const getGcd = (a, b) => {
 
 const getRounds = () => {
   const rounds = [[], [], []];
-  const numberOfRounds = 3;
   for (let i = 1, j = 0; i <= numberOfRounds; i += 1, j += 1) {
     const randomNumber1 = getRandomNumber(1, 100);
     const randomNumber2 = getRandomNumber(1, 100);

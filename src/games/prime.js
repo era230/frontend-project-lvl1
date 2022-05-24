@@ -1,5 +1,5 @@
 import runEngine from '../index.js';
-import getRandomNumber from '../helpers.js';
+import { getRandomNumber, numberOfRounds } from '../helpers.js';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -15,7 +15,6 @@ const isPrime = (num) => {
 
 const getRounds = () => {
   const rounds = [[], [], []];
-  const numberOfRounds = 3;
   for (let i = 1, j = 0; i <= numberOfRounds; i += 1, j += 1) {
     const randomNumber = getRandomNumber(0, 200);
     const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';

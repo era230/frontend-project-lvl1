@@ -1,5 +1,5 @@
 import runEngine from '../index.js';
-import getRandomNumber from '../helpers.js';
+import { getRandomNumber, numberOfRounds } from '../helpers.js';
 
 const calculateExpression = (operator, num1, num2) => {
   let answer;
@@ -21,7 +21,6 @@ const calculateExpression = (operator, num1, num2) => {
 
 const getRounds = () => {
   const rounds = [[], [], []];
-  const numberOfRounds = 3;
   for (let i = 1, j = 0; i <= numberOfRounds; i += 1, j += 1) {
     const randomNumber1 = getRandomNumber(0, 50);
     const randomNumber2 = getRandomNumber(0, 50);

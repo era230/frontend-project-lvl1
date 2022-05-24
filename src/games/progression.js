@@ -1,5 +1,5 @@
 import runEngine from '../index.js';
-import getRandomNumber from '../helpers.js';
+import { getRandomNumber, numberOfRounds } from '../helpers.js';
 
 const getProgression = (length, startOfSequence, dif) => {
   const progressionNumbers = [];
@@ -13,7 +13,6 @@ const getProgression = (length, startOfSequence, dif) => {
 
 const getRounds = () => {
   const rounds = [[], [], []];
-  const numberOfRounds = 3;
   for (let i = 1, j = 0; i <= numberOfRounds; i += 1, j += 1) {
     const startOfSequence = getRandomNumber(0, 50);
     const randomLength = getRandomNumber(5, 10);
