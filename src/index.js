@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import numberOfRounds from './helpers.js';
+import { numberOfRounds } from './helpers.js';
 
 const runEngine = (ruleOfTheGame, rounds) => {
   console.log('Welcome to the Brain Games!');
