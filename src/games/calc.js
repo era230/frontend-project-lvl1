@@ -1,39 +1,44 @@
 import runEngine from '../index.js';
 import getRandomNumber from '../helpers.js';
 
-const getCorrectAnswer = (operator, num1, num2) => {
-  let correctAnswer;
-  if (operator === '+') {
-    correctAnswer = String(num1 + num2);
+const calculateExpression = (operator, num1, num2) => {
+  let answer;
+  switch (operator) {
+    case '+':
+      answer = num1 + num2;
+      break;
+    case '-':
+      answer = num1 - num2;
+      break;
+    case '*':
+      answer = num1 * num2;
+      break;
+    default:
+      throw new Error(`Unknown operator: ${operator}`);
   }
-  if (operator === '-') {
-    correctAnswer = String(num1 - num2);
-  }
-  if (operator === '*') {
-    correctAnswer = String(num1 * num2);
-  }
-  return correctAnswer;
+  return answer;
 };
 
-const getGameValues = () => {
-  const gameValues = [];
-  for (let i = 1; i <= 3; i += 1) {
-    const randomNumber1 = getRandomNumber(0, 51);
-    const randomNumber2 = getRandomNumber(0, 51);
+const getRounds = () => {
+  const rounds = [[], [], []];
+  const numberOfRounds = 3;
+  for (let i = 1, j = 0; i <= numberOfRounds; i += 1, j += 1) {
+    const randomNumber1 = getRandomNumber(0, 50);
+    const randomNumber2 = getRandomNumber(0, 50);
     const operators = ['+', '-', '*'];
-    const randomOperator = operators[getRandomNumber(0, 3)];
+    const randomOperator = operators[getRandomNumber(0, 2)];
     const expression = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
-    const correctAnswer = getCorrectAnswer(randomOperator, randomNumber1, randomNumber2);
-    gameValues.push(expression);
-    gameValues.push(correctAnswer);
+    const correctAnswer = String(calculateExpression(randomOperator, randomNumber1, randomNumber2));
+    rounds[j].push(expression);
+    rounds[j].push(correctAnswer);
   }
-  return gameValues;
+  return rounds;
 };
 
 const ruleOfTheGame = 'What is the result of the expression?';
 
 const startCalculatorGame = () => {
-  runEngine(ruleOfTheGame, getGameValues());
+  runEngine(ruleOfTheGame, getRounds());
 };
 
 export default startCalculatorGame;

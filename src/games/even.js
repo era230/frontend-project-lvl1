@@ -1,21 +1,24 @@
 import runEngine from '../index.js';
 import getRandomNumber from '../helpers.js';
 
-const getGameValues = () => {
-  const gameValues = [];
-  for (let i = 1; i <= 3; i += 1) {
-    const randomNumber = getRandomNumber(0, 101);
-    gameValues.push(randomNumber);
-    const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-    gameValues.push(correctAnswer);
+const isEven = (num) => num % 2 === 0;
+
+const getRounds = () => {
+  const rounds = [[], [], []];
+  const numberOfRounds = 3;
+  for (let i = 1, j = 0; i <= numberOfRounds; i += 1, j += 1) {
+    const randomNumber = getRandomNumber(0, 100);
+    rounds[j].push(randomNumber);
+    const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
+    rounds[j].push(correctAnswer);
   }
-  return gameValues;
+  return rounds;
 };
 
 const ruleOfTheGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const startEvenGame = () => {
-  runEngine(ruleOfTheGame, getGameValues());
+  runEngine(ruleOfTheGame, getRounds());
 };
 
 export default startEvenGame;

@@ -1,30 +1,37 @@
 import runEngine from '../index.js';
 import getRandomNumber from '../helpers.js';
 
-const getGameValues = () => {
-  const gameValues = [];
-  for (let i = 1; i <= 3; i += 1) {
-    let sequence = getRandomNumber(0, 50);
-    const progressionNumbers = [sequence];
-    const randomLength = getRandomNumber(5, 11);
-    const dif = getRandomNumber(1, 13);
-    for (let j = 1; j <= randomLength; j += 1) {
-      sequence += dif;
-      progressionNumbers.push(sequence);
-    }
+const getProgression = (length, startOfSequence, dif) => {
+  const progressionNumbers = [];
+  let sequence = startOfSequence;
+  for (let i = 1; i <= length; i += 1) {
+    sequence += dif;
+    progressionNumbers.push(sequence);
+  }
+  return progressionNumbers;
+};
+
+const getRounds = () => {
+  const rounds = [[], [], []];
+  const numberOfRounds = 3;
+  for (let i = 1, j = 0; i <= numberOfRounds; i += 1, j += 1) {
+    const startOfSequence = getRandomNumber(0, 50);
+    const randomLength = getRandomNumber(5, 10);
+    const dif = getRandomNumber(1, 12);
+    const progressionNumbers = getProgression(randomLength, startOfSequence, dif);
     const answerI = getRandomNumber(0, randomLength);
     const correctAnswer = String(progressionNumbers[answerI]);
     progressionNumbers[answerI] = '..';
-    gameValues.push(progressionNumbers.join(' '));
-    gameValues.push(correctAnswer);
+    rounds[j].push(progressionNumbers.join(' '));
+    rounds[j].push(correctAnswer);
   }
-  return gameValues;
+  return rounds;
 };
 
 const ruleOfTheGame = 'What number is missing in the progression?';
 
 const startProgressionGame = () => {
-  runEngine(ruleOfTheGame, getGameValues());
+  runEngine(ruleOfTheGame, getRounds());
 };
 
 export default startProgressionGame;
