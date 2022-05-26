@@ -4,12 +4,14 @@ import getRandomNumber from '../helpers.js';
 const isEven = (num) => num % 2 === 0;
 
 const getRounds = () => {
-  const rounds = [[], [], []];
+  const rounds = [];
   for (let i = 1; i <= roundsCount; i += 1) {
-    const randomNumber = getRandomNumber(0, 100);
-    rounds[i - 1].push(randomNumber);
-    const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
-    rounds[i - 1].push(correctAnswer);
+    const valuesForRound = [];
+    const expression = getRandomNumber(0, 100);
+    const correctAnswer = isEven(expression) ? 'yes' : 'no';
+    valuesForRound.push(expression);
+    valuesForRound.push(correctAnswer);
+    rounds.push(valuesForRound);
   }
   return rounds;
 };

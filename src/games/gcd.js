@@ -14,14 +14,16 @@ const getGCD = (a, b) => {
 };
 
 const getRounds = () => {
-  const rounds = [[], [], []];
+  const rounds = [];
   for (let i = 1; i <= roundsCount; i += 1) {
+    const valuesForRound = [];
     const randomNumber1 = getRandomNumber(1, 100);
     const randomNumber2 = getRandomNumber(1, 100);
     const expression = `${randomNumber1} ${randomNumber2}`;
-    rounds[i - 1].push(expression);
     const correctAnswer = String(getGCD(randomNumber1, randomNumber2));
-    rounds[i - 1].push(correctAnswer);
+    valuesForRound.push(expression);
+    valuesForRound.push(correctAnswer);
+    rounds.push(valuesForRound);
   }
   return rounds;
 };

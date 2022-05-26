@@ -14,12 +14,14 @@ const isPrime = (num) => {
 };
 
 const getRounds = () => {
-  const rounds = [[], [], []];
+  const rounds = [];
   for (let i = 1; i <= roundsCount; i += 1) {
-    const randomNumber = getRandomNumber(0, 200);
-    const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
-    rounds[i - 1].push(randomNumber);
-    rounds[i - 1].push(correctAnswer);
+    const valuesForRound = [];
+    const expression = getRandomNumber(0, 200);
+    const correctAnswer = isPrime(expression) ? 'yes' : 'no';
+    valuesForRound.push(expression);
+    valuesForRound.push(correctAnswer);
+    rounds.push(valuesForRound);
   }
   return rounds;
 };
