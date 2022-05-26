@@ -1,35 +1,30 @@
-import runEngine from '../index.js';
-import { getRandomNumber, numberOfRounds } from '../helpers.js';
+import { roundsCount, runEngine } from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const calculateExpression = (operator, num1, num2) => {
-  let answer;
   switch (operator) {
     case '+':
-      answer = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      answer = num1 - num2;
-      break;
+      return num1 - num2;
     case '*':
-      answer = num1 * num2;
-      break;
+      return num1 * num2;
     default:
       throw new Error(`Unknown operator: ${operator}`);
   }
-  return answer;
 };
 
 const getRounds = () => {
   const rounds = [[], [], []];
-  for (let i = 1, j = 0; i <= numberOfRounds; i += 1, j += 1) {
+  for (let i = 1; i <= roundsCount; i += 1) {
     const randomNumber1 = getRandomNumber(0, 50);
     const randomNumber2 = getRandomNumber(0, 50);
     const operators = ['+', '-', '*'];
     const randomOperator = operators[getRandomNumber(0, 2)];
     const expression = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
     const correctAnswer = String(calculateExpression(randomOperator, randomNumber1, randomNumber2));
-    rounds[j].push(expression);
-    rounds[j].push(correctAnswer);
+    rounds[i - 1].push(expression);
+    rounds[i - 1].push(correctAnswer);
   }
   return rounds;
 };

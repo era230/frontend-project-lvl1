@@ -1,7 +1,7 @@
-import runEngine from '../index.js';
-import { getRandomNumber, numberOfRounds } from '../helpers.js';
+import { roundsCount, runEngine } from '../index.js';
+import getRandomNumber from '../helpers.js';
 
-const getGcd = (a, b) => {
+const getGCD = (a, b) => {
   let num1 = Math.max(a, b);
   let num2 = Math.min(a, b);
   let reminder = num1 % num2;
@@ -15,21 +15,21 @@ const getGcd = (a, b) => {
 
 const getRounds = () => {
   const rounds = [[], [], []];
-  for (let i = 1, j = 0; i <= numberOfRounds; i += 1, j += 1) {
+  for (let i = 1; i <= roundsCount; i += 1) {
     const randomNumber1 = getRandomNumber(1, 100);
     const randomNumber2 = getRandomNumber(1, 100);
     const expression = `${randomNumber1} ${randomNumber2}`;
-    rounds[j].push(expression);
-    const correctAnswer = String(getGcd(randomNumber1, randomNumber2));
-    rounds[j].push(correctAnswer);
+    rounds[i - 1].push(expression);
+    const correctAnswer = String(getGCD(randomNumber1, randomNumber2));
+    rounds[i - 1].push(correctAnswer);
   }
   return rounds;
 };
 
 const ruleOfTheGame = 'Find the greatest common divisor of given numbers.';
 
-const startGcdGames = () => {
+const startGCDGames = () => {
   runEngine(ruleOfTheGame, getRounds());
 };
 
-export default startGcdGames;
+export default startGCDGames;
