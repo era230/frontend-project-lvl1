@@ -7,9 +7,9 @@ const getRounds = () => {
   const rounds = [];
   for (let i = 1; i <= roundsCount; i += 1) {
     const valuesForRound = [];
-    const randomNumber = getRandomNumber(0, 100);
-    const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
-    valuesForRound.push(randomNumber);
+    const expression = getRandomNumber(0, 100);
+    const correctAnswer = isEven(expression) ? 'yes' : 'no';
+    valuesForRound.push(expression);
     valuesForRound.push(correctAnswer);
     rounds.push(valuesForRound);
   }
