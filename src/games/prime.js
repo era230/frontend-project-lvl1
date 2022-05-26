@@ -17,9 +17,9 @@ const getRounds = () => {
   const rounds = [];
   for (let i = 1; i <= roundsCount; i += 1) {
     const valuesForRound = [];
-    const expression = getRandomNumber(0, 200);
-    const correctAnswer = isPrime(expression) ? 'yes' : 'no';
-    valuesForRound.push(expression);
+    const randomNumber = getRandomNumber(0, 200);
+    const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+    valuesForRound.push(randomNumber);
     valuesForRound.push(correctAnswer);
     rounds.push(valuesForRound);
   }
