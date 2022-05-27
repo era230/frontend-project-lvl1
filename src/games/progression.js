@@ -21,7 +21,7 @@ const getRounds = () => {
     const indexOfAnswer = getRandomNumber(0, progressionLength - 1);
     const correctAnswer = String(expression[indexOfAnswer]);
     expression[indexOfAnswer] = '..';
-    const dataForRound = [expression, correctAnswer];
+    const dataForRound = [expression.join(' '), correctAnswer];
     rounds.push(dataForRound);
   }
   return rounds;
