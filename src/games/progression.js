@@ -14,17 +14,15 @@ const getProgression = (length, startOfSequence, step) => {
 const getRounds = () => {
   const rounds = [];
   for (let i = 1; i <= roundsCount; i += 1) {
-    const valuesForRound = [];
     const startOfSequence = getRandomNumber(0, 50);
     const progressionLength = getRandomNumber(5, 10);
     const step = getRandomNumber(1, 12);
-    const progressionNumbers = getProgression(progressionLength, startOfSequence, step);
+    const expression = getProgression(progressionLength, startOfSequence, step);
     const indexOfAnswer = getRandomNumber(0, progressionLength - 1);
-    const correctAnswer = String(progressionNumbers[indexOfAnswer]);
-    progressionNumbers[indexOfAnswer] = '..';
-    valuesForRound.push(progressionNumbers.join(' '));
-    valuesForRound.push(correctAnswer);
-    rounds.push(valuesForRound);
+    const correctAnswer = String(expression[indexOfAnswer]);
+    expression[indexOfAnswer] = '..';
+    const dataForRound = [expression, correctAnswer];
+    rounds.push(dataForRound);
   }
   return rounds;
 };

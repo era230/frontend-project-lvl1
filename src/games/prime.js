@@ -18,10 +18,8 @@ const getRounds = () => {
   for (let i = 1; i <= roundsCount; i += 1) {
     const expression = getRandomNumber(0, 200);
     const correctAnswer = isPrime(expression) ? 'yes' : 'no';
-    const valuesForRound = [];
-    valuesForRound.push(expression);
-    valuesForRound.push(correctAnswer);
-    rounds.push(valuesForRound);
+    const dataForRound = [expression, correctAnswer];
+    rounds.push(dataForRound);
   }
   return rounds;
 };

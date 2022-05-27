@@ -6,12 +6,10 @@ const isEven = (num) => num % 2 === 0;
 const getRounds = () => {
   const rounds = [];
   for (let i = 1; i <= roundsCount; i += 1) {
-    const valuesForRound = [];
     const expression = getRandomNumber(0, 100);
     const correctAnswer = isEven(expression) ? 'yes' : 'no';
-    valuesForRound.push(expression);
-    valuesForRound.push(correctAnswer);
-    rounds.push(valuesForRound);
+    const dataForRound = [expression, correctAnswer];
+    rounds.push(dataForRound);
   }
   return rounds;
 };
