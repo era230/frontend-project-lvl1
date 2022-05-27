@@ -16,10 +16,10 @@ const getGCD = (a, b) => {
 const getRounds = () => {
   const rounds = [];
   for (let i = 1; i <= roundsCount; i += 1) {
-    const randomNumber1 = getRandomNumber(1, 100);
-    const randomNumber2 = getRandomNumber(1, 100);
-    const expression = `${randomNumber1} ${randomNumber2}`;
-    const correctAnswer = String(getGCD(randomNumber1, randomNumber2));
+    const number1 = getRandomNumber(1, 100);
+    const number2 = getRandomNumber(1, 100);
+    const expression = `${number1} ${number2}`;
+    const correctAnswer = String(getGCD(number1, number2));
     const dataForRound = [expression, correctAnswer];
     rounds.push(dataForRound);
   }
