@@ -17,20 +17,20 @@ const getRounds = () => {
     const startOfSequence = getRandomNumber(0, 50);
     const progressionLength = getRandomNumber(5, 10);
     const step = getRandomNumber(1, 12);
-    const expression = getProgression(progressionLength, startOfSequence, step);
+    const question = getProgression(progressionLength, startOfSequence, step);
     const indexOfAnswer = getRandomNumber(0, progressionLength - 1);
-    const correctAnswer = String(expression[indexOfAnswer]);
-    expression[indexOfAnswer] = '..';
-    const dataForRound = [expression.join(' '), correctAnswer];
+    const correctAnswer = String(question[indexOfAnswer]);
+    question[indexOfAnswer] = '..';
+    const dataForRound = [question.join(' '), correctAnswer];
     rounds.push(dataForRound);
   }
   return rounds;
 };
 
-const ruleOfTheGame = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const startProgressionGame = () => {
-  runEngine(ruleOfTheGame, getRounds());
+  runEngine(description, getRounds());
 };
 
 export default startProgressionGame;

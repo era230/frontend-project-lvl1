@@ -21,18 +21,18 @@ const getRounds = () => {
     const number2 = getRandomNumber(0, 50);
     const operators = ['+', '-', '*'];
     const operator = operators[getRandomNumber(0, 2)];
-    const expression = `${number1} ${operator} ${number2}`;
+    const question = `${number1} ${operator} ${number2}`;
     const correctAnswer = String(calculateExpression(operator, number1, number2));
-    const dataForRound = [expression, correctAnswer];
+    const dataForRound = [question, correctAnswer];
     rounds.push(dataForRound);
   }
   return rounds;
 };
 
-const ruleOfTheGame = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const startCalculatorGame = () => {
-  runEngine(ruleOfTheGame, getRounds());
+  runEngine(description, getRounds());
 };
 
 export default startCalculatorGame;
